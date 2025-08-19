@@ -1,197 +1,111 @@
-# Gemini-CLI 终极使用教程
+# Gemini-CLI 终极使用教程网站
 
-一个现代化的、响应式的 Gemini-CLI 教程展示网站，提供完整的从入门到精通的学习指南。
+一个现代化的、响应式的 Gemini-CLI 教程网站，采用 GitHub 风格设计并融入丰富的 Gemini 主题元素。
 
-## 🌟 特性
+## 项目简介
 
-### 📚 内容特性
-- **完整教程**: 涵盖 Gemini-CLI 从安装到高级功能的全面指南
-- **中文支持**: 完全中文化的界面和内容
-- **结构化内容**: 清晰的章节划分和层次结构
+本项目是一个完整的 Gemini-CLI 使用教程网站，从入门到精通，涵盖了所有核心功能和高级技巧。网站采用现代化的设计风格，融入了丰富的 Gemini 主题元素和交互效果，为用户提供优质的学习体验。
 
-### 🎨 用户体验
-- **响应式设计**: 完美适配桌面、平板和手机设备
-- **平滑滚动**: 所有导航和跳转都使用平滑滚动效果
-- **智能导航**: 自动生成目录，支持滚动高亮当前章节
-- **一键复制**: 代码块和章节链接都支持一键复制
-- **加载动画**: 优雅的加载指示器
+## 功能特点
 
-### ⚡ 性能优化
-- **防抖处理**: 优化滚动事件性能
-- **被动监听**: 提升页面响应速度
-- **异步加载**: 高效的内容加载机制
-- **错误处理**: 完善的错误捕获和用户友好的错误提示
+### 🎨 设计特色
+- **Gemini 主题色彩**：采用 Google Gemini 的官方色彩方案
+- **响应式设计**：完美适配桌面、平板和移动设备
+- **现代化UI**：卡片式布局，清晰的视觉层次
+- **深色模式支持**：自动适应系统主题设置
 
-### 🎯 可访问性
-- **语义化 HTML**: 使用正确的 HTML5 语义标签
-- **ARIA 支持**: 完整的屏幕阅读器支持
-- **键盘导航**: 支持键盘操作
-- **SEO 优化**: 完善的 meta 标签和结构化数据
+### ✨ 交互体验
+- **平滑滚动导航**：点击导航链接平滑滚动到对应部分
+- **搜索功能**：全文搜索，高亮显示匹配结果
+- **动画效果**：丰富的过渡动画和微交互
+- **代码块复制**：一键复制代码示例
 
-## 🚀 快速开始
+### 📚 内容结构
+- **完整教程**：从安装到高级技巧的全面指南
+- **命令详解**：所有斜杠命令的详细说明和示例
+- **实用技巧**：真实场景下的工作流和最佳实践
+- **常见问题**：解答用户可能遇到的问题
 
-### 在线预览
-直接在浏览器中打开 `index.html` 文件即可查看教程。
+## 技术栈
 
-### 本地开发服务器
+- **HTML5**：语义化标记，良好的可访问性
+- **CSS3**：现代样式，动画效果，响应式布局
+- **JavaScript**：交互功能，搜索功能，动画控制
+- **SVG 图标**：矢量图标，完美适配各种分辨率
 
-#### 使用 Python
-```bash
-# Python 3
-python -m http.server 8000
-
-# Python 2
-python -m SimpleHTTPServer 8000
-```
-
-#### 使用 Node.js
-```bash
-# 安装 http-server
-npm install -g http-server
-
-# 启动服务器
-http-server -p 8000
-```
-
-#### 使用 PHP
-```bash
-php -S localhost:8000
-```
-
-然后在浏览器中访问 `http://localhost:8000`
-
-## 📁 项目结构
+## 项目结构
 
 ```
 gemini-cli-tutorial/
-├── index.html              # 主页面
-├── style.css              # 样式文件
-├── script.js              # JavaScript 功能
-├── gemini_tutorial.md     # Markdown 教程内容
-└── README.md              # 项目说明文档
+├── index.html          # 主页面
+├── styles/
+│   └── main.css        # 样式文件
+├── scripts/
+│   └── main.js         # JavaScript 文件
+└── images/
+    ├── favicon.ico     # 网站图标
+    ├── favicon.svg     # SVG 格式网站图标
+    ├── gemini-logo.svg # Gemini Logo
+    ├── gemini-icon.svg # Gemini 小图标
+    └── README.md       # 图像资源说明
 ```
 
-## 🛠️ 技术栈
+## 快速开始
 
-- **HTML5**: 语义化标记
-- **CSS3**: 现代样式和动画
-- **JavaScript (ES6+)**: 交互功能
-- **Marked.js**: Markdown 渲染
-- **响应式设计**: 移动端优先
+### 本地运行
 
-## 📱 浏览器支持
+1. 确保您的系统已安装 Python（推荐 Python 3.6+）
+2. 进入项目目录：
+   ```bash
+   cd gemini-cli-tutorial
+   ```
+3. 启动本地服务器：
+   ```bash
+   python -m http.server 8000
+   ```
+4. 在浏览器中访问 http://localhost:8000
 
-- ✅ Chrome 60+
-- ✅ Firefox 55+
-- ✅ Safari 12+
-- ✅ Edge 79+
-- ✅ 移动端浏览器
+### 在线预览
 
-## 🎨 主要功能
+您可以通过以下链接在线预览网站：
+[GitHub Pages 链接]（如果已部署）
 
-### 1. 动态导航
-- 自动从 Markdown 内容生成导航菜单
-- 支持 H1 和 H2 级别的标题导航
-- 滚动时自动高亮当前章节
+## 浏览器兼容性
 
-### 2. 代码复制功能
-- 所有代码块都有复制按钮
-- 支持现代 Clipboard API 和降级方案
-- 复制成功有视觉反馈
+- Chrome (推荐)
+- Firefox
+- Safari
+- Edge
 
-### 3. 锚点链接
-- 每个标题都有可复制的锚点链接
-- 支持直接分享特定章节
-- URL 锚点自动跳转
+## 贡献指南
 
-### 4. 响应式布局
-- 移动端优化的导航
-- 自适应的代码块和表格
-- 触摸友好的交互元素
+欢迎提交 Issue 和 Pull Request 来改进这个项目！
 
-### 5. 加载和错误处理
-- 优雅的加载动画
-- 友好的错误提示
-- 重试机制
+### 开发流程
 
-## 🔧 自定义配置
-
-### 修改主题色
-在 `style.css` 中修改 CSS 变量：
-```css
-:root {
-    --primary-color: #ff9900;    /* 主色调 */
-    --bg-color: #1a1a1a;        /* 背景色 */
-    --text-color: #fff;         /* 文字色 */
-}
-```
-
-### 更换教程内容
-替换 `gemini_tutorial.md` 文件内容，支持标准 Markdown 语法：
-- 标题 (H1-H6)
-- 代码块
-- 表格
-- 列表
-- 链接和图片
-
-### 调整导航层级
-在 `script.js` 中修改导航生成逻辑：
-```javascript
-if (level <= 2) { // 修改这里的数字来改变导航层级
-    // 导航生成逻辑
-}
-```
-
-## 📝 内容编写指南
-
-### Markdown 格式要求
-1. **标题结构**: 使用 H1 作为主要章节，H2 作为子章节
-2. **代码块**: 使用三个反引号包围，支持语言标识
-3. **表格**: 使用标准 Markdown 表格语法
-4. **链接**: 支持内部锚点链接和外部链接
-
-### 示例结构
-```markdown
-# 第一章：基础知识
-
-## 1.1 安装指南
-
-### 环境要求
-内容...
-
-```bash
-npm install -g @google/gemini-cli
-```
-
-## 1.2 快速开始
-内容...
-```
-
-## 🤝 贡献指南
-
-1. Fork 本项目
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
+1. Fork 本仓库
+2. 创建您的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启 Pull Request
+5. 开启一个 Pull Request
 
-## 📄 许可证
+## 许可证
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
 
-## 🙏 致谢
+## 致谢
 
-- [Marked.js](https://marked.js.org/) - Markdown 解析器
-- [Google Gemini](https://ai.google.dev/) - AI 技术支持
-- 所有贡献者和用户的反馈
+- Google Gemini 团队
+- GitHub 设计团队
+- 所有贡献者
 
-## 📞 联系方式
+## 联系方式
 
-如果您有任何问题或建议，请通过以下方式联系：
+如有问题或建议，请通过以下方式联系：
 
-- 提交 [Issue](../../issues)
-- 发起 [Discussion](../../discussions)
+- 提交 Issue：[GitHub Issues](链接)
+- 邮箱：[您的邮箱]
 
 ---
 
-⭐ 如果这个项目对您有帮助，请给它一个星标！
+© 2025 Gemini-CLI 教程网站. 保留所有权利。
