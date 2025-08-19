@@ -1,0 +1,633 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gemini主题色彩 */
+:root {
+    --gemini-blue: #4285F4;
+    --gemini-green: #34A853;
+    --gemini-yellow: #FBBC05;
+    --gemini-red: #EA4335;
+    --gemini-purple: #A142F4;
+    --gemini-dark: #202124;
+    --gemini-light: #F8F9FA;
+    --gemini-gray: #5F6368;
+    --gemini-text: #202124;
+    --gemini-text-light: #5F6368;
+    --gemini-border: #DADCE0;
+    --gemini-bg: #FFFFFF;
+    --gemini-bg-light: #F8F9FA;
+    --gemini-bg-dark: #E8EAED;
+    --gemini-gradient: linear-gradient(135deg, var(--gemini-blue), var(--gemini-purple));
+}
+
+body {
+    font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+    line-height: 1.6;
+    color: var(--gemini-text);
+    background-color: var(--gemini-bg);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(66, 133, 244, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 90% 30%, rgba(52, 168, 83, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 50% 70%, rgba(251, 188, 5, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 20% 90%, rgba(234, 67, 53, 0.05) 0%, transparent 20%);
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header styles */
+.header {
+    background: var(--gemini-gradient);
+    color: #fff;
+    padding: 32px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 120%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05) 10px,
+        rgba(255, 255, 255, 0.1) 10px,
+        rgba(255, 255, 255, 0.1) 20px
+    );
+    animation: movePattern 20s linear infinite;
+}
+
+@keyframes movePattern {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+.header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Navigation styles */
+.navbar {
+    background-color: var(--gemini-bg);
+    border-bottom: 1px solid var(--gemini-border);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.nav-links li {
+    margin: 0 8px 0 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--gemini-text);
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gemini-gradient);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.nav-links a:hover::before {
+    left: 0;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-links a.active {
+    background-color: var(--gemini-blue);
+    color: white;
+}
+
+/* 搜索框样式 */
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+#search-input {
+    padding: 8px 12px;
+    border: 1px solid var(--gemini-border);
+    border-radius: 6px;
+    width: 300px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: var(--gemini-blue);
+    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+}
+
+#search-button {
+    padding: 8px 16px;
+    background-color: var(--gemini-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+#search-button:hover {
+    background-color: #3367d6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(66, 133, 244, 0.3);
+}
+
+/* Main content styles */
+.main-content {
+    display: flex;
+    padding: 32px 0;
+    gap: 24px;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 25%;
+    padding-right: 24px;
+    border-right: 1px solid var(--gemini-border);
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 60px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav li {
+    margin-bottom: 4px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: var(--gemini-text);
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.sidebar-nav a::before {
+    content: "✦";
+    color: var(--gemini-blue);
+    margin-right: 8px;
+    transition: transform 0.2s;
+}
+
+.sidebar-nav a:hover::before {
+    transform: rotate(45deg);
+}
+
+.sidebar-nav a:hover {
+    background-color: var(--gemini-bg-light);
+    color: var(--gemini-blue);
+    padding-left: 16px;
+}
+
+.sidebar-nav a.active {
+    background-color: var(--gemini-blue);
+    color: #fff;
+}
+
+.sidebar-nav a.active::before {
+    color: white;
+}
+
+/* Content area styles */
+.content {
+    width: 75%;
+    padding-left: 24px;
+}
+
+.content h2 {
+    font-size: 1.8rem;
+    margin: 24px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gemini-border);
+    color: var(--gemini-dark);
+    font-weight: 500;
+    position: relative;
+}
+
+.content h2::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--gemini-gradient);
+}
+
+.content h3 {
+    font-size: 1.4rem;
+    margin: 20px 0 12px;
+    color: var(--gemini-dark);
+    font-weight: 500;
+    position: relative;
+    padding-left: 20px;
+}
+
+.content h3::before {
+    content: "✦";
+    color: var(--gemini-blue);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.content p {
+    margin-bottom: 16px;
+    color: var(--gemini-text-light);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.content ul, .content ol {
+    margin-bottom: 16px;
+    padding-left: 24px;
+}
+
+.content li {
+    margin-bottom: 8px;
+    color: var(--gemini-text-light);
+}
+
+.content pre {
+    background-color: var(--gemini-bg-light);
+    padding: 16px;
+    overflow-x: auto;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border: 1px solid var(--gemini-border);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.content pre::before {
+    content: "✦";
+    color: var(--gemini-blue);
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 1.2rem;
+}
+
+.content code {
+    font-family: 'Roboto Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.9rem;
+    background-color: var(--gemini-bg-dark);
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: var(--gemini-dark);
+}
+
+.content pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+}
+
+/* Gemini元素装饰 */
+.gemini-element {
+    position: relative;
+    padding-left: 20px;
+    transition: transform 0.2s ease;
+}
+
+.gemini-element::before {
+    content: "✦";
+    color: var(--gemini-blue);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform 0.2s ease;
+}
+
+.gemini-element:hover {
+    transform: translateX(5px);
+}
+
+.gemini-element:hover::before {
+    transform: rotate(45deg);
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--gemini-bg-light);
+    border-top: 1px solid var(--gemini-border);
+    padding: 24px 0;
+    text-align: center;
+    margin-top: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gemini-gradient);
+}
+
+.footer p {
+    color: var(--gemini-text-light);
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--gemini-blue);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+.btn:hover::before {
+    left: 0;
+}
+
+.btn:hover {
+    background-color: #3367d6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(66, 133, 244, 0.3);
+}
+
+/* 卡片样式 */
+.card {
+    background-color: var(--gemini-bg);
+    border: 1px solid var(--gemini-border);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gemini-gradient);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+/* 提示框样式 */
+.alert {
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.alert::before {
+    content: "✦";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 1.2rem;
+}
+
+.alert-info {
+    background-color: #e8f0fe;
+    border-left: 4px solid var(--gemini-blue);
+    color: #1967d2;
+}
+
+.alert-info::before {
+    color: var(--gemini-blue);
+}
+
+.alert-warning {
+    background-color: #fef7e0;
+    border-left: 4px solid var(--gemini-yellow);
+    color: #f9ab00;
+}
+
+.alert-warning::before {
+    color: var(--gemini-yellow);
+}
+
+.alert-success {
+    background-color: #e6f4ea;
+    border-left: 4px solid var(--gemini-green);
+    color: #137333;
+}
+
+.alert-success::before {
+    color: var(--gemini-green);
+}
+
+/* 搜索结果高亮 */
+.search-highlight {
+    background-color: yellow;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .sidebar, .content {
+        width: 100%;
+        padding: 0;
+    }
+    
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--gemini-border);
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
+    }
+    
+    .nav-links {
+        justify-content: flex-start;
+    }
+    
+    .nav-links li {
+        margin: 4px 4px 0 0;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+    
+    .search-container {
+        margin-top: 12px;
+    }
+    
+    #search-input {
+        width: 200px;
+    }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --gemini-text: #e8eaed;
+        --gemini-text-light: #9aa0a6;
+        --gemini-border: #5f6368;
+        --gemini-bg: #202124;
+        --gemini-bg-light: #303134;
+        --gemini-bg-dark: #3c4043;
+    }
+    
+    .navbar {
+        background-color: rgba(32, 33, 36, 0.9);
+    }
+    
+    .content pre {
+        background-color: var(--gemini-bg-light);
+        border-color: var(--gemini-border);
+    }
+    
+    .content code {
+        background-color: var(--gemini-bg-dark);
+    }
+    
+    .card {
+        background-color: var(--gemini-bg-light);
+        border-color: var(--gemini-border);
+    }
+    
+    .alert-info {
+        background-color: #1a237e;
+        color: #bbdefb;
+    }
+    
+    .alert-warning {
+        background-color: #7f6000;
+        color: #fff9c4;
+    }
+    
+    .alert-success {
+        background-color: #1b5e20;
+        color: #c8e6c9;
+    }
+}
